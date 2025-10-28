@@ -1,0 +1,15 @@
+{% extends 'proveedores/base.html' %}
+
+{% block title %}Eliminar Proveedor{% endblock %}
+
+{% block content %}
+    <h1 class="mb-4">Eliminar Proveedor</h1>
+    <div class="alert alert-warning" role="alert">
+        ¿Estás seguro de que quieres eliminar al proveedor <strong>{{ proveedor.nombre }}</strong> (ID: {{ proveedor.id_proveedor }})? Esta acción es irreversible.
+    </div>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Sí, Eliminar</button>
+        <a href="{% url 'detalle_proveedor' proveedor.pk %}" class="btn btn-secondary">Cancelar</a>
+    </form>
+{% endblock %}

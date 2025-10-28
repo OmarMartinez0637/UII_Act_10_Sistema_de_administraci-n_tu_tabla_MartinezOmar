@@ -1,0 +1,13 @@
+{% extends 'proveedores/base.html' %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+    <h1 class="mb-4">Bienvenido al Sistema de Gestión de Proveedores de McDonald's</h1>
+    <p class="lead">Aquí puedes gestionar la información de todos tus proveedores de manera eficiente.</p>
+    <div class="list-group">
+        <a href="{% url 'lista_proveedores' %}" class="list-group-item list-group-item-action">Ver todos los proveedores</a>
+        <a href="{% url 'anadir_proveedor' %}" class="list-group-item list-group-item-action">Añadir un nuevo proveedor</a>
+        <a href="{% url 'admin:index' %}" class="list-group-item list-group-item-action">Ir al panel de administración</a>
+    </div>
+{% endblock %}

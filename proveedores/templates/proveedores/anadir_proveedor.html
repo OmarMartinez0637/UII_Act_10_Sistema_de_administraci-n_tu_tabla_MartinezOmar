@@ -1,0 +1,13 @@
+{% extends 'proveedores/base.html' %}
+
+{% block title %}Añadir Proveedor{% endblock %}
+
+{% block content %}
+    <h1 class="mb-4">Añadir Nuevo Proveedor</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">Guardar Proveedor</button>
+        <a href="{% url 'lista_proveedores' %}" class="btn btn-secondary">Cancelar</a>
+    </form>
+{% endblock %}
